@@ -19,7 +19,8 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="login.htm">controlador</prop>
+                <prop key="index.htm">controlador</prop>
+                <prop key="x.htm">controlador</prop>
             </props>
         </property>
     </bean>
@@ -32,6 +33,6 @@
     <!--
     The index controller.
     -->
- <bean name ="controlador" class="Controlador.Ctrl" />
+    <bean name="controlador" class="Ctrl.Controlador"/>
 
 </beans>
