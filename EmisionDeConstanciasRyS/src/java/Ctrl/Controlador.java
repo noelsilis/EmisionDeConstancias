@@ -44,13 +44,13 @@ public class Controlador {
         mav.addObject("lista", datos);
         if (datos.size() > 0) {
             tmp = true;
-            return new ModelAndView("redirect:/x.htm");
+            return new ModelAndView("redirect:/inicio.htm");
         }
         tmp = false;
         return new ModelAndView("redirect:/index.htm");
     }
 
-    @RequestMapping("x.htm")
+    @RequestMapping("inicio.htm")
     public ModelAndView x() {
         if (!tmp) {
             return new ModelAndView("redirect:/index.htm");
