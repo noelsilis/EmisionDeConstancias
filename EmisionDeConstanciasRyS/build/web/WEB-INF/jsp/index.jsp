@@ -13,6 +13,7 @@
         <!-- Los iconos de tipo solid de Fontawesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/solid.css">
         <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
+        <link rel="shortcut icon" href="imgVista/ico.png">
         <!-- Nuestro css-->
         <link rel="stylesheet" type="text/css" href="cssVista/index.css">
         <title>Login</title>

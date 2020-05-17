@@ -40,19 +40,29 @@ public class Controlador {
     public ModelAndView login(Usuario u) {
         String sql = "select * from alumnos where NoControl='" + u.getMatricula()
                 + "' and Contraseña='" + u.getPass() + "'";
-        List datos = this.jdbcTemplate.queryForList(sql);
+        datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);
+        tmp = false;
         if (datos.size() > 0) {
             tmp = true;
-            return new ModelAndView("redirect:/inicio.htm");
+            mav.setViewName("inicio");
         }
-        tmp = false;
-        return new ModelAndView("redirect:/index.htm");
+        return mav;
     }
 
     @RequestMapping("inicio.htm")
-    public ModelAndView x() {
-        if (!tmp) {
+    public ModelAndView inicio() {
+        if (datos.size() <= 0 || !tmp)  {
+            tmp = false;
+            return new ModelAndView("redirect:/index.htm");
+        }
+        return mav;
+    }
+    
+    @RequestMapping("tramites.htm")
+    public ModelAndView tramites() {
+        if (datos.size() <= 0 || !tmp)  {
+            tmp = false;
             return new ModelAndView("redirect:/index.htm");
         }
         return null;
