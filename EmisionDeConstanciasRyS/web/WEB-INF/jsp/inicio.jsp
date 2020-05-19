@@ -62,58 +62,58 @@
                                                 <div class="dropdown-menu text-center nav-color text-light">
                                                     <a><img src="imgVista/ico.png" width="50%"/></a><br>
                                                         <c:forEach var="dato" items="${lista}">
+                                                        <label>${dato.NoControl}</label><br>
                                                         <label>${dato.APaterno}</label>
                                                         <label>${dato.AMaterno}</label><br>
                                                         <label>${dato.Nombres}</label><br>
                                                         <label>${dato.Email}</label>
-                                                    </c:forEach>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-light" href="index.htm">Salir</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-light" href="index.htm">Salir</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </nav>
+                                </nav>
+                            </div>
                         </div>
                     </div>
+                    <div class="fab">
+                        <span class="fab-action-button"><i class="fab-action-button__icon"></i></span>
+                        <ul class="fab-buttons">
+                            <li class="fab-buttons__item"><a class="fab-buttons__link" data-tooltip="Buzón Ciudadano"><i class="icon-material icon-material_buzon"></i></a></li>
+                            <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Trámites y Servicios" target="_blank"><i class="icon-material icon-material_ruts"></i></a></li>
+                            <li class="fab-buttons__item"><a href="#chat" class="fab-buttons__link" data-tooltip="Chat en Linea" target="_blank"><i class="icon-material icon-material_tw"></i></a></li>
+                            <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Facebook" target="_blank"><i class="icon-material icon-material_fb"></i></a></li>
+                            <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Twitter" target="_blank"><i class="icon-material icon-material_tw"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="fab">
-                    <span class="fab-action-button"><i class="fab-action-button__icon"></i></span>
-                    <ul class="fab-buttons">
-                        <li class="fab-buttons__item"><a class="fab-buttons__link" data-tooltip="Buzón Ciudadano"><i class="icon-material icon-material_buzon"></i></a></li>
-                        <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Trámites y Servicios" target="_blank"><i class="icon-material icon-material_ruts"></i></a></li>
-                        <li class="fab-buttons__item"><a href="#chat" class="fab-buttons__link" data-tooltip="Chat en Linea" target="_blank"><i class="icon-material icon-material_tw"></i></a></li>
-                        <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Facebook" target="_blank"><i class="icon-material icon-material_fb"></i></a></li>
-                        <li class="fab-buttons__item"><a href="https://ruts.hidalgo.gob.mx/" class="fab-buttons__link" data-tooltip="Twitter" target="_blank"><i class="icon-material icon-material_tw"></i></a></li>
-                    </ul>
+            </div>
+            <script type="text/javascript">
+                window.$ = $;
+                window.classNames = classNames;
+            </script>
+            <div id="root"></div><link rel="stylesheet" type="text/css" href="vistaInicio/css/inicio.css">
+        <div class="container" id="Inicio">
+            <div class="row">
+                <div class="col-12" style="padding-top: 20px;">
+                    <h3 class="title-leyend text-light">Encuentra el trámite o servicio que estás buscando.</h3><br>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript">
-            window.$ = $;
-            window.classNames = classNames;
-        </script>
-        <div id="root"></div><link rel="stylesheet" type="text/css" href="vistaInicio/css/inicio.css">
-
-    <div class="container" id="Inicio">
-        <div class="row">
-            <div class="col-12" style="padding-top: 20px;">
-                <h3 class="title-leyend text-light">Encuentra el trámite o servicio que estás buscando.</h3><br>
-            </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-3 col-sm-12 col-12 text-light">
-                <label class="boldg">¿Qué quieres hacer?</label><br>
-                <button class="buttontab " id="tipoServicio" onclick="javascript: changeQuery('tipo', 'Servicio')">Mis Trámites</button>
-                <a href="tramites.htm"><button class="buttontab " id="tipoTrámite" onclick="javascript: changeQuery('tipo', 'Trámite')">Trámites</button></a>
-                <button class="buttontab " id="tipo" onclick="javascript: changeQuery('tipo', '')">Contacto</button>
-                <label class="boldg">Canal de atención</label><br>
-                <button class="buttontab " id="tipoInformativo" onclick="javascript: changeQuery('nivel', 'Informativo')">Presencial <i class="fas fa-walking"></i></button>
-                <button class="buttontab " id="tipoDeinicio" onclick="javascript: changeQuery('nivel', 'De inicio')">Iniciar en línea <i class="fas fa-mouse-pointer"></i></button>
-                <button class="buttontab " id="tipoTransaccional" onclick="javascript: changeQuery('nivel', 'Transaccional')">Hacer en línea <i class="fas fa-wifi" style="margin-right: -6px;"></i></button>
-                <button class="buttontab " id="tipo" onclick="javascript: changeQuery('nivel', '')">Todos</button>
-            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-md-3 col-sm-12 col-12 text-light">
+                    <label class="boldg">¿Qué quieres hacer?</label><br>
+                    <button class="buttontab " id="tipoServicio" onclick="javascript: changeQuery('tipo', 'Servicio')">Mis Trámites</button>
+                    <a href="tramites.htm?mat=${dato.NoControl}"><button class="buttontab " >Trámites</button></a>
+                    <button class="buttontab " id="tipo" onclick="javascript: changeQuery('tipo', '')">Contacto</button>
+                    <label class="boldg">Canal de atención</label><br>
+                    <button class="buttontab " id="tipoInformativo" onclick="javascript: changeQuery('nivel', 'Informativo')">Presencial <i class="fas fa-walking"></i></button>
+                    <button class="buttontab " id="tipoDeinicio" onclick="javascript: changeQuery('nivel', 'De inicio')">Iniciar en línea <i class="fas fa-mouse-pointer"></i></button>
+                    <button class="buttontab " id="tipoTransaccional" onclick="javascript: changeQuery('nivel', 'Transaccional')">Hacer en línea <i class="fas fa-wifi" style="margin-right: -6px;"></i></button>
+                    <button class="buttontab " id="tipo" onclick="javascript: changeQuery('nivel', '')">Todos</button>
+                </div>
+            </c:forEach>
             <div class="col-md-9 col-sm-12 col-12">
                 <div class="container text-light">
                     <h3>Bienvenido</h3>

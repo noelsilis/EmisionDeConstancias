@@ -25,7 +25,7 @@ public class Controlador {
     JdbcTemplate jdbcTemplate = new JdbcTemplate(con.Conectar());
     ModelAndView mav = new ModelAndView();
     boolean tmp = false;
-    int id;
+    String mat;
     List datos;
     
     @RequestMapping(value = "index.htm", method = RequestMethod.GET)

@@ -43,7 +43,6 @@
             .fa,.far,.fas{font-family:"Font Awesome 5 Free" !important}
         </style> 
     </head>
-    <body>
     <body class="ig_laptop">
         <div id="headergob" only-headers="true" size="10"><div><div style="margin-top: 108px;"></div>
                 <div class="hero-section">
