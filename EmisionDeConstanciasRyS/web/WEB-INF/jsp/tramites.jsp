@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,7 @@
                         <div class="navgob">
                             <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-cal firstnav">
                                 <div class="container" style="padding: 1px;">
-                                    <label></label><a href="http://www.itsoeh.edu.mx/"  title="Ir a la página oficial"><img src="imgVista/logo.png" width="40%"></a>
+                                    <label></label><a href="http://www.itsoeh.edu.mx/"  title="Ir a la página oficial"><img src="imgVista/logoITSOEHBlanco.png" width="40%"></a>
                                     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                         <ul class="navbar-nav">

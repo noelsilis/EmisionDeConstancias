@@ -67,4 +67,12 @@ public class Controlador {
         }
         return null;
     }
+    @RequestMapping("nuevo.htm")
+    public ModelAndView nuevo(){
+        String sql="select*from alumnos";
+        List datos=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("listar",datos);
+        mav.setViewName(mat);
+        return mav;
+    }
 }
