@@ -21,8 +21,8 @@
             <props>
                 <prop key="index.htm">controlador</prop>
                 <prop key="inicio.htm">controlador</prop>
-                <prop key="nuevo.htm">controlador</prop>
-                <prop key="tramites.htm">controlador</prop>
+                <prop key="menu_t_residencia.htm">controlador</prop>
+                <prop key="menu_t_servicio.htm">controlador</prop>
             </props>
         </property>
     </bean>

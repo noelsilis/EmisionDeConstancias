@@ -6,10 +6,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <!-- JQUEERY-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- FRAMEWORK BOOTSTRAP para etilo de la pagina-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">      
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
         <!-- Los iconos de tipo solid de Fontawesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/solid.css">
         <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
@@ -21,6 +21,9 @@
     <body>
         <div class="modal-dialog text-center">
             <div class="col-sm-10 main-section">
+                <div class="logo">
+                    <a><img src="imgVista/logoITSOEHBlanco.png" class="itsoeh"></a>
+                </div>
                 <div class="modal-content">
                     <div class="col-12 user-img">
                         <img src="imgVista/Lobo.jpg" />
@@ -32,10 +35,15 @@
                         <div class="form-group" id="contrasena-group">
                             <input class="form-control" type="password" placeholder="Contraseña" name="pass"/>                            
                         </div>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Iniciar sesión</button>
+                        <button type="submit" class="btn-iniciar"><i class="fas fa-sign-in-alt"></i>  Iniciar sesión</button>
                     </form>
                     <div class="col-12 forgot">
-                        <a href="#">Recordar contraseña</a>
+                        <a href="https://www.facebook.com/ITSOEH-P%C3%A1gina-Oficial-142983839177483/?ti=as" class="sidebar_fb" target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook">
+                            <i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/ITSOEHmx" class="sidebar_tw" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter">
+                            <i class="fab fa-twitter"></i></a>
+                        <a href="http://www.itsoeh.edu.mx/" target="_blank" class="itsoeh-site" data-toggle="tooltip" data-placement="top" title="Página oficial ITOSEH">
+                            <i class="fas fa-university"></i></a>
                     </div>
                 </div>
             </div>

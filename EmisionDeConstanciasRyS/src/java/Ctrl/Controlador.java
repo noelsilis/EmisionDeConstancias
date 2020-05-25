@@ -67,8 +67,16 @@ public class Controlador {
         }
         return null;
     }
-    @RequestMapping("nuevo.htm")
-    public ModelAndView nuevo(){
+    @RequestMapping("menu_t_servicio.htm")
+    public ModelAndView menu_t_servicio(){
+        String sql="select*from alumnos";
+        List datos=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("listar",datos);
+        mav.setViewName(mat);
+        return mav;
+    }
+    @RequestMapping("menu_t_residencia.htm")
+    public ModelAndView menu_t_residencia(){
         String sql="select*from alumnos";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("listar",datos);
