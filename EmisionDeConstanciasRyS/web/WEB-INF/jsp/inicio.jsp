@@ -23,7 +23,7 @@
                 <a href="http://www.itsoeh.edu.mx/" target="_blank"><img src="imgVista/logoITSOEHBlanco.png" class="itsoeh"></a>
             </div>
             <div class="right_area">
-                <a href="#" class="logout_btn">Salir</a>
+                <a href="index.htm" class="logout_btn">Salir</a>
                 <a href="https://www.facebook.com/ITSOEH-P%C3%A1gina-Oficial-142983839177483/?ti=as" class="sidebar_fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://twitter.com/ITSOEHmx" class="sidebar_tw" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
@@ -33,7 +33,9 @@
         <div class="sidebar">
             <center>
                 <img src="imgVista/Lobo.jpg" class="profile_image" alt="">
-                <h4>Jessica</h4>
+                <c:forEach var="dato" items="${lista}">
+                    <h4>${dato.Nombres}</h4>
+                </c:forEach>
             </center>
             <!--Para agregar nuevas paginas, solo debes poner el target y su nombre corresppondiente-->
             <ul>

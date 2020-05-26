@@ -40,6 +40,7 @@ public class Controlador {
     public ModelAndView login(Usuario u) {
         String sql = "select * from alumnos where NoControl='" + u.getMatricula()
                 + "' and Contraseña='" + u.getPass() + "'";
+        mat=u.getMatricula();
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);
         tmp = false;
@@ -69,10 +70,12 @@ public class Controlador {
     }
     @RequestMapping("menu_t_servicio.htm")
     public ModelAndView menu_t_servicio(){
-        String sql="select*from alumnos";
+        String sql="select*from tramites where NoControl="+mat;
         List datos=this.jdbcTemplate.queryForList(sql);
+        int tamAr=datos.size()-1;
         mav.addObject("listar",datos);
-        mav.setViewName(mat);
+        mav.addObject("tamAr",tamAr);
+        mav.setViewName("menu_t_servicio");
         return mav;
     }
     @RequestMapping("menu_t_residencia.htm")
@@ -81,6 +84,15 @@ public class Controlador {
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("listar",datos);
         mav.setViewName(mat);
+        return mav;
+    }
+    
+    @RequestMapping("nuevo.htm")
+    public ModelAndView nuevo() {
+        if (datos.size() <= 0 || !tmp) {
+            tmp = false;
+            return new ModelAndView("redirect:/index.htm");
+        }
         return mav;
     }
 }
