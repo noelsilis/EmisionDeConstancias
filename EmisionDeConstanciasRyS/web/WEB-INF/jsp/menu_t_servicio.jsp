@@ -30,80 +30,73 @@
                     <tr>
                         <td>Solicitud de Servicio social</td>
                         <td>
-                            <!--inicio Modal-->
-                            <div id="ex1" class="modal f1-modal">
-                                <div><img src="imgVista/servicio_social_001.png" style="center" width="105%" height="300%"></div>
-                                <a href="#" rel="modal:close">Close</a>
-                            </div>
-                            <!--fin Modal-->
-                            <a class="btn-one"><i class="fas fa-file-download"></i></a>
+                            
+                            <a class="btn-one" href="https://drive.google.com/u/0/uc?id=1F7hF1n1k94qAhXW4YlI1AChop0xYSTa0&export=download"><i class="fas fa-file-download"></i></a>
                             <!--inicio llamada modal-->
-                            <a class="btn-one" href="#ex1" rel="modal:open"><i class="fas fa-eye"></i></a></p
+                            <a class="btn-one" href="https://drive.google.com/file/d/1F7hF1n1k94qAhXW4YlI1AChop0xYSTa0/view?usp=sharing" target="_blank"><i class="fas fa-eye"></i></a>
                             <!--fin llamada modal-->
                         </td>
-                        <td>Finalizado</td>
+                        <td id="etiqueta0">Finalizado</td>
                     </tr>
                     <tr>
                         <td>Guía para la carta de aceptación</td>
                         <td><a class="btn-two"><i class="fas fa-file-download"></i></a>
                             <a class="btn-two"><i class="fas fa-eye"></i></a></td>
-                        <td>Finalizado</td>
+                        <td id="etiqueta1">Finalizado</td>
                     </tr>
                     <tr>
                         <td>Carta Compromiso de Servicio Social</td>
                         <td><a class="btn-one"><i class="fas fa-file-download"></i></a>
                             <a class="btn-one"><i class="fas fa-eye"></i></a></td>
-                        <td>En proceso</td>
+                        <td id="etiqueta2">En proceso</td>
                     </tr>
                     <tr>
                         <td>Registro de Servicio Social</td>
                         <td><a class="btn-two"><i class="fas fa-file-download"></i></a>
                             <a class="btn-two"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta3">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Reporte Bimestral de Servicio Social</td>
                         <td><a class="btn-one"><i class="fas fa-file-download"></i></a>
                             <a class="btn-one"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta4">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Formato de evaluación cualitativa del prestador de Servicio Social</td>
                         <td><a class="btn-two"><i class="fas fa-file-download"></i></a>
                             <a class="btn-two"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta5">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Formato de autoevaluación cualitativa del prestador de Servicio Social</td>
                         <td><a class="btn-one"><i class="fas fa-file-download"></i></a>
                             <a class="btn-one"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta6">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Formato de evaluación de las actividades del prestador de Servicio Social</td>
                         <td><a class="btn-two"><i class="fas fa-file-download"></i></a>
                             <a class="btn-two"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta7">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Conclusiones de Servicio Social</td>
                         <td><a class="btn-one"><i class="fas fa-file-download"></i></a>
                             <a class="btn-one"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta8">No iniciado</td>
                     </tr>
                     <tr>
                         <td>Guía para la carta de terminación de Servicio Social</td>
                         <td><a class="btn-two"><i class="fas fa-file-download"></i></a>
                             <a class="btn-two"><i class="fas fa-eye"></i></a></td>
-                        <td>No iniciado</td>
+                        <td id="etiqueta9">No iniciado</td>
                     </tr>
                 </table>
             </div>
         </div>
+        <script type="text/javascript" src="jsVista/menu_t_servicio.js"></script>
         <!-- Remember to include jQuery :) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-        <!-- jQuery Modal -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <script type="text/javascript" src="jsVista/menu_t_servicio.js"></script>
     </body>
 </html>
