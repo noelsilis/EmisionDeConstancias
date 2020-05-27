@@ -1,24 +1,58 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-      <div></div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="imgVista/ico.png">
+        <link rel="stylesheet" href="cssVista/menu_t_servicio.css" type="text/css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <title>Tramite Servicio</title>
+    </head>
+    <body>
+        <!--<input type="checkbox" id="check">-->
+        <div class="margen1">
+            <h1>Trámite Residencia Social</h1>
+            <div class="margen2">
+                <div class="margen3">
+                    <h3>Proceso</h3>
+                </div>
+            </div>
+            <div class="margen3_1">
+                <table>
+                    <tr>
+                        <th>Pasos</th>
+                        <th>Entrega</th>
+                        <th>Descargar/Ver</th>
+                        <th>Estado</th>
+                    </tr>
+                    <c:if test = "${tamAr>=0}">
+                        <c:forEach var = "i" begin = "0" end = "${tamAr}">
+                            <tr>                    
+                                <td>${listar[i].tipoTramite}</td>
+                                <td>${listar[i].fechaEntrega}</td>
+                                <c:set var="clas" value="btn-two"/>
+                                <c:if test = "${(i%2) == 0}">
+                                    <c:set var="clas" value="btn-one"/>
+                                </c:if>
+                                <td>    
+                                    <a class="${clas}" href="${listar[i].descargaDoc}"><i class="fas fa-file-download"></i></a>
+                                    <!--inicio llamada modal-->
+                                    <a class="${clas}" href="${listar[i].vistaDoc}" target="_blank"><i class="fas fa-eye"></i></a>
+                                    <!--fin llamada modal-->
+                                </td>
+                                <td id="etiqueta${i}">${listar[i].estado}</td>
+                            </tr>
+                        </c:forEach>
+                    </c:if>
+                </table>
+            </div>
+        </div>
+        <h1 id="tam" style="font-size:0px;"><c:out value = "${tamAr}"/></h1>  
+        <script type="text/javascript" src="jsVista/menu_t_servicio.js"></script>
+        <!-- Remember to include jQuery :) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    </body>
 </html>
