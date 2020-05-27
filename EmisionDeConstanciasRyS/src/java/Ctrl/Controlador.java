@@ -8,6 +8,7 @@ package Ctrl;
 import Config.Conexion;
 import Entidad.Usuario;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class Controlador {
     ModelAndView mav = new ModelAndView();
     boolean tmp = false;
     String mat;
+    String no;
     List datos;
 
     @RequestMapping(value = "index.htm", method = RequestMethod.GET)
@@ -48,7 +50,6 @@ public class Controlador {
             tmp = true;
             mav.setViewName("inicio");
             if ("Master".equals(u.getMatricula())) {
-                System.out.println(u.getMatricula());
                 mav.setViewName("administrador");//cambiar a la de admin ****************
             }
         }
@@ -85,7 +86,47 @@ public class Controlador {
         mav.setViewName("menu_t_residencia");
         return mav;
     }
-    
+
+    @RequestMapping("datosAlumno.htm")
+    public ModelAndView datosAlumno() {
+        String sql = "select * from alumnos where NoControl<>'" + mat + "'";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        int tamAr = datos.size() - 1;
+        mav.addObject("listar", datos);
+        mav.addObject("tamAr", tamAr);
+        mav.setViewName("datosAlumno");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarAlumno.htm", method = RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request) {
+        no = request.getParameter("id");
+        String sql = "select * from alumnos where NoControl='" + no + "'";
+        System.out.println(sql);
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("tmp", datos);
+        mav.setViewName("editarAlumno");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarAlumno.htm", method = RequestMethod.POST)
+    public ModelAndView Editar(Usuario u) {
+        String sql = "update alumnos set NoControl=?, Nombres=?, APaterno=?, "
+                + "AMaterno=?, Especialidad=?, Email=? where NoControl=?";
+        this.jdbcTemplate.update(sql, u.getMatricula(), u.getNombre(), u.getAPaterno(),
+                u.getAMaterno(), u.getEspecialidad(), u.getEmail(), no);
+        return new ModelAndView("redirect:/datosAlumno.htm");
+//        mav.setViewName("datosAlumno");
+//        return mav;
+    }
+
+    @RequestMapping("delete.htm")
+    public ModelAndView Delete(HttpServletRequest request) {
+        no = request.getParameter("id");
+        String sql = "delete from alumnos where NoControl=" + no;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/datosAlumno.htm");
+    }
 }
 
 //"select * from alumnos where NoControl='" + u.getMatricula() + "' and Contraseña='" + u.getPass() + "'";
