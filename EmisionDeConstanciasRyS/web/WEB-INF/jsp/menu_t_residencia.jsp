@@ -28,29 +28,29 @@
                         <th>Descargar/Ver</th>
                         <th>Estado</th>
                     </tr>
-                    <c:if test = "${tamAr>=0}">
-                        <c:forEach var = "i" begin = "0" end = "${tamAr}">
+                    <c:if test = "${tamAr2>=0}">
+                        <c:forEach var = "i" begin = "0" end = "${tamAr2}">
                             <tr>                    
-                                <td>${listar[i].tipoTramite}</td>
-                                <td>${listar[i].fechaEntrega}</td>
+                                <td>${listar2[i].tipoTramite}</td>
+                                <td>${listar2[i].fechaEntrega}</td>
                                 <c:set var="clas" value="btn-two"/>
                                 <c:if test = "${(i%2) == 0}">
                                     <c:set var="clas" value="btn-one"/>
                                 </c:if>
                                 <td>    
-                                    <a class="${clas}" href="${listar[i].descargaDoc}"><i class="fas fa-file-download"></i></a>
+                                    <a class="${clas}" href="${listar2[i].descargaDoc}"><i class="fas fa-file-download"></i></a>
                                     <!--inicio llamada modal-->
-                                    <a class="${clas}" href="${listar[i].vistaDoc}" target="_blank"><i class="fas fa-eye"></i></a>
+                                    <a class="${clas}" href="${listar2[i].vistaDoc}" target="_blank"><i class="fas fa-eye"></i></a>
                                     <!--fin llamada modal-->
                                 </td>
-                                <td id="etiqueta${i}">${listar[i].estado}</td>
+                                <td id="etiqueta${i}">${listar2[i].estado}</td>
                             </tr>
                         </c:forEach>
                     </c:if>
                 </table>
             </div>
         </div>
-        <h1 id="tam" style="font-size:0px;"><c:out value = "${tamAr}"/></h1>  
+        <h1 id="tam" style="font-size:0px;"><c:out value = "${tamAr2}"/></h1>  
         <script type="text/javascript" src="jsVista/menu_t_servicio.js"></script>
         <!-- Remember to include jQuery :) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
