@@ -70,7 +70,7 @@ public class Controlador {
     }
     @RequestMapping("menu_t_servicio.htm")
     public ModelAndView menu_t_servicio(){
-        String sql="select*from tramites where NoControl="+mat;
+        String sql="select*from tramites where NoControl="+mat+"and tipoTramite like '%ervicio%'";
         List datos=this.jdbcTemplate.queryForList(sql);
         int tamAr=datos.size()-1;
         mav.addObject("listar",datos);
@@ -80,10 +80,12 @@ public class Controlador {
     }
     @RequestMapping("menu_t_residencia.htm")
     public ModelAndView menu_t_residencia(){
-        String sql="select*from alumnos";
+        String sql="select*from tramites where NoControl="+mat+"and tipoTramite like '%esidencia%'";
         List datos=this.jdbcTemplate.queryForList(sql);
+        int tamAr=datos.size()-1;
         mav.addObject("listar",datos);
-        mav.setViewName(mat);
+        mav.addObject("tamAr",tamAr);
+        mav.setViewName("menu_t_residencia");
         return mav;
     }
     
