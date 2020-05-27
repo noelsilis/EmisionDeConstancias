@@ -1,0 +1,16 @@
+CREATE TABLE `ruts`.`tramites` (
+  `idtramites` INT NOT NULL AUTO_INCREMENT,
+  `tipoTramite` VARCHAR(45) NULL,
+  `estado` VARCHAR(45) NULL,
+  `fechaTramite` DATE NULL,
+  `fechaEntrega` DATE NULL,
+  `vistaDoc` VARCHAR(250) NULL,
+  `descargaDoc` VARCHAR(250) NULL,
+  `NoControl` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idtramites`),
+  INDEX `NoControl_idx` (`NoControl` ASC),
+  CONSTRAINT `NoControl`
+    FOREIGN KEY (`NoControl`)
+    REFERENCES `ruts`.`alumnos` (`NoControl`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
