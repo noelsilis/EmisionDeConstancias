@@ -28,23 +28,25 @@
                         <th>Descargar/Ver</th>
                         <th>Estado</th>
                     </tr>
-                    <c:forEach var = "i" begin = "0" end = "${tamAr}">
-                        <tr>                    
-                            <td>${listar[i].tipoTramite}</td>
-                            <td>${listar[i].fechaEntrega}</td>
-                            <c:set var="clas" value="btn-two"/>
-                            <c:if test = "${(i%2) == 0}">
-                                <c:set var="clas" value="btn-one"/>
-                            </c:if>
-                            <td>    
-                                <a class="${clas}" href="${listar[i].descargaDoc}"><i class="fas fa-file-download"></i></a>
-                                <!--inicio llamada modal-->
-                                <a class="${clas}" href="${listar[i].vistaDoc}" target="_blank"><i class="fas fa-eye"></i></a>
-                                <!--fin llamada modal-->
-                            </td>
-                            <td id="etiqueta${i}">${listar[i].estado}</td>
-                        </tr>
-                    </c:forEach>
+                    <c:if test = "${tamAr>=1}">
+                        <c:forEach var = "i" begin = "0" end = "${tamAr}">
+                            <tr>                    
+                                <td>${listar[i].tipoTramite}</td>
+                                <td>${listar[i].fechaEntrega}</td>
+                                <c:set var="clas" value="btn-two"/>
+                                <c:if test = "${(i%2) == 0}">
+                                    <c:set var="clas" value="btn-one"/>
+                                </c:if>
+                                <td>    
+                                    <a class="${clas}" href="${listar[i].descargaDoc}"><i class="fas fa-file-download"></i></a>
+                                    <!--inicio llamada modal-->
+                                    <a class="${clas}" href="${listar[i].vistaDoc}" target="_blank"><i class="fas fa-eye"></i></a>
+                                    <!--fin llamada modal-->
+                                </td>
+                                <td id="etiqueta${i}">${listar[i].estado}</td>
+                            </tr>
+                        </c:forEach>
+                    </c:if>
                 </table>
             </div>
         </div>
