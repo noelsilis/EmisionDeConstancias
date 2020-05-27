@@ -27,7 +27,7 @@ public class Controlador {
     boolean tmp = false;
     String mat;
     List datos;
-    
+
     @RequestMapping(value = "index.htm", method = RequestMethod.GET)
     public ModelAndView login() {
         tmp = false;
@@ -40,61 +40,54 @@ public class Controlador {
     public ModelAndView login(Usuario u) {
         String sql = "select * from alumnos where NoControl='" + u.getMatricula()
                 + "' and Contraseña='" + u.getPass() + "'";
-        mat=u.getMatricula();
+        mat = u.getMatricula();
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);
         tmp = false;
         if (datos.size() > 0) {
             tmp = true;
             mav.setViewName("inicio");
+            if ("Master".equals(u.getMatricula())) {
+                System.out.println(u.getMatricula());
+                mav.setViewName("inicio");//cambiar a la de admin ****************
+            }
         }
         return mav;
     }
 
     @RequestMapping("inicio.htm")
     public ModelAndView inicio() {
-        if (datos.size() <= 0 || !tmp)  {
-            tmp = false;
-            return new ModelAndView("redirect:/index.htm");
-        }
-        return mav;
-    }
-    
-    @RequestMapping("tramites.htm")
-    public ModelAndView tramites() {
-        if (datos.size() <= 0 || !tmp)  {
-            tmp = false;
-            return new ModelAndView("redirect:/index.htm");
-        }
-        return null;
-    }
-    @RequestMapping("menu_t_servicio.htm")
-    public ModelAndView menu_t_servicio(){
-        String sql="select*from tramites where NoControl="+mat+"and tipoTramite like '%ervicio%'";
-        List datos=this.jdbcTemplate.queryForList(sql);
-        int tamAr=datos.size()-1;
-        mav.addObject("listar",datos);
-        mav.addObject("tamAr",tamAr);
-        mav.setViewName("menu_t_servicio");
-        return mav;
-    }
-    @RequestMapping("menu_t_residencia.htm")
-    public ModelAndView menu_t_residencia(){
-        String sql="select*from tramites where NoControl="+mat+"and tipoTramite like '%esidencia%'";
-        List datos=this.jdbcTemplate.queryForList(sql);
-        int tamAr=datos.size()-1;
-        mav.addObject("listar",datos);
-        mav.addObject("tamAr",tamAr);
-        mav.setViewName("menu_t_residencia");
-        return mav;
-    }
-    
-    @RequestMapping("nuevo.htm")
-    public ModelAndView nuevo() {
         if (datos.size() <= 0 || !tmp) {
             tmp = false;
             return new ModelAndView("redirect:/index.htm");
         }
         return mav;
     }
+
+    @RequestMapping("menu_t_servicio.htm")
+    public ModelAndView menu_t_servicio() {
+        String sql = "select*from tramites where NoControl=" + mat + " and tipoTramite like '%ervicio%'";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        int tamAr = datos.size() - 1;
+        mav.addObject("listar", datos);
+        mav.addObject("tamAr", tamAr);
+        mav.setViewName("menu_t_servicio");
+        return mav;
+    }
+
+    @RequestMapping("menu_t_residencia.htm")
+    public ModelAndView menu_t_residencia() {
+        String sql = "select*from tramites where NoControl=" + mat + " and tipoTramite like '%esidencia%'";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        int tamAr = datos.size() - 1;
+        mav.addObject("listar", datos);
+        mav.addObject("tamAr", tamAr);
+        mav.setViewName("menu_t_residencia");
+        return mav;
+    }
+    
 }
+
+//"select * from alumnos where NoControl='" + u.getMatricula() + "' and Contraseña='" + u.getPass() + "'";
+//"select*from tramites where NoControl=" + mat + " and tipoTramite like '%ervicio%'";
+//"select*from tramites where NoControl=" + mat + " and tipoTramite like '%esidencia%'";
