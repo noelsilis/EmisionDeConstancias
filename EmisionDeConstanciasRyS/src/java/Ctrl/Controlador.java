@@ -49,7 +49,7 @@ public class Controlador {
             mav.setViewName("inicio");
             if ("Master".equals(u.getMatricula())) {
                 System.out.println(u.getMatricula());
-                mav.setViewName("inicio");//cambiar a la de admin ****************
+                mav.setViewName("administrador");//cambiar a la de admin ****************
             }
         }
         return mav;

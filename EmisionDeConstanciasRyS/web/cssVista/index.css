@@ -29,16 +29,21 @@ body{
 }
 
 .form-group input{
+    background: #084866;
     height: 45px;
     font-size: 18px;
     border:0;
     padding-left: 54px;
     border-radius: 25px;
 }
+.form-group input:enabled{
+    background: #084866;
+    color:#ccc;
+}
 
 .form-group::before{
     font-family: "Font Awesome\ 5 Free";
-    color: darkgray;
+    color:grey;
     position: absolute;
     left: 28px;
     font-size: 25px;
@@ -47,10 +52,12 @@ body{
 
 .form-group#user-group::before{
     content: "\f007";
+    color: #ccc;
 }
 
 .form-group#contrasena-group::before{
     content: "\f023";
+    color: #ccc;
 }
 .forgot{
     padding: 10px 0;
