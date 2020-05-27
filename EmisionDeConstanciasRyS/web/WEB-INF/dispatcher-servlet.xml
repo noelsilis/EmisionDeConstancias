@@ -26,6 +26,7 @@
                 <prop key="datosAlumno.htm">controlador</prop>
                 <prop key="editarAlumno.htm">controlador</prop>
                 <prop key="delete.htm">controlador</prop>
+                <prop key="adminServicio.htm">controlador</prop>
             </props>
         </property>
     </bean>

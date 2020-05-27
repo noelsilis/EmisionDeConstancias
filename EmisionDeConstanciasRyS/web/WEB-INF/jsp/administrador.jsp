@@ -39,8 +39,8 @@
             <ul>
                 <li><a class="tramites-btn"><i class="fas fa-folder"></i><span class="first">Trámites</span></a>
                     <ul class="tramites-show">
-                        <li><a href="#" target="contenedorIFrame"><i class="fas fa-universal-access"></i><span>Servicio</span></a></li>
-                        <li><a href="#"><i class="fas fa-people-arrows"></i><span>Residencia</span></a></li>
+                        <li><a href="adminServicio.htm" target="contenedorIFrame"><i class="fas fa-universal-access"></i><span>Servicio</span></a></li>
+                        <li><a href="#" target="contenedorIFrame"><i class="fas fa-people-arrows"></i><span>Residencia</span></a></li>
                     </ul>
                 </li>
                 <li>

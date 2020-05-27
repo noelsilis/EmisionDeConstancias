@@ -116,8 +116,6 @@ public class Controlador {
         this.jdbcTemplate.update(sql, u.getMatricula(), u.getNombre(), u.getAPaterno(),
                 u.getAMaterno(), u.getEspecialidad(), u.getEmail(), no);
         return new ModelAndView("redirect:/datosAlumno.htm");
-//        mav.setViewName("datosAlumno");
-//        return mav;
     }
 
     @RequestMapping("delete.htm")
@@ -126,6 +124,17 @@ public class Controlador {
         String sql = "delete from alumnos where NoControl=" + no;
         this.jdbcTemplate.update(sql);
         return new ModelAndView("redirect:/datosAlumno.htm");
+    }
+    
+    @RequestMapping("adminServicio.htm")
+    public ModelAndView adminServicio() {
+        String sql = "select * from alumnos where NoControl<>'" + mat + "'";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        int tamAr = datos.size() - 1;
+        mav.addObject("listar", datos);
+        mav.addObject("tamAr", tamAr);
+        mav.setViewName("adminServicio");
+        return mav;
     }
 }
 
