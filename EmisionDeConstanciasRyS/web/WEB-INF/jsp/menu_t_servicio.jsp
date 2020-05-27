@@ -28,7 +28,7 @@
                         <th>Descargar/Ver</th>
                         <th>Estado</th>
                     </tr>
-                    <c:if test = "${tamAr>=1}">
+                    <c:if test = "${tamAr>=0}">
                         <c:forEach var = "i" begin = "0" end = "${tamAr}">
                             <tr>                    
                                 <td>${listar[i].tipoTramite}</td>
