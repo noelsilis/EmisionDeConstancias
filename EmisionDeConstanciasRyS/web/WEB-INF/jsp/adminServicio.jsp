@@ -40,23 +40,13 @@
                                 <td>${listar[i].APaterno}</td>
                                 <td>${listar[i].AMaterno}</td>
                                 <td>${listar[i].Nombres}</td>
-                                <td>${listar[i].Especialidad}</td>
+                                <td>${listar[i].Especialidad}</td>                             
                             </tr>
-                        </c:forEach>
-                    </c:if>
+                    </c:forEach>
+                </c:if>
                 </tbody>
             </table>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 </body>
 </html>
