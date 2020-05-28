@@ -29,7 +29,7 @@
                     <button type="button" class="btn-editar" data-toggle="modal" data-target="#modal1">
                         <i class="fas fa-user-edit"></i>
                     </button>
-                    <button type="button" class="btn-agregar" data-toggle="modal" data-target="#modal2">
+                    <button type="button" class="btn-agregar" data-target="agregarAdmin.htm">
                         <i class="fas fa-user-plus"></i>
                     </button>
                 </div>
