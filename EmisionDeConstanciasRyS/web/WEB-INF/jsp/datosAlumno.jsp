@@ -5,32 +5,37 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="imgVista/ico.png">
-        <link rel="stylesheet" href="cssVista/menu_t_servicio.css" type="text/css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="cssVista/datosAlumnos.css" type="text/css">
+        <!-- JQUEERY-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- FRAMEWORK BOOTSTRAP para etilo de la pagina-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/solid.css">
+        <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
     </head>
     <title>Tramite Servicio</title>
 </head>
 <body>
     <!--<input type="checkbox" id="check">-->
     <div class="margen1">
-        <h1>Trámite Servicio Social</h1>
+        <h1>Datos de los Alumnos</h1>
         <div class="margen2">
-            <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+            <form class="col-12">
+                <div class="form-group" id="buscar">
+                    <input class="form-control"  id="myInput" type="text" placeholder="Buscar..."/>              
+                </div>
+            </form>
         </div>
         <div class="margen3_1">
             <table>
                 <tr>
                     <th>Matricula</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
+                    <th>Ap Paterno</th>
+                    <th>Ap Materno</th>
                     <th>Nombre(s)</th>
                     <th>Especialidad</th>
+                    <th></th>
                     <th></th>
                 </tr>
                 <tbody id="myTable">
@@ -43,16 +48,74 @@
                                 <td>${listar[i].Nombres}</td>
                                 <td>${listar[i].Especialidad}</td>
                                 <td>
-                                    <a href="editarAlumno.htm?id=${listar[i].NoControl}" arget="contenedorIFrame" class="btn btn-warning"> Editar </a>
-                                    <a href="delete.htm?id=${listar[i].NoControl}"class="btn btn-danger">Borrar</a>
+                                    <!--<a href="editarAlumno.htm?id=${listar[i].NoControl}" class="btn btn-primary"><i class="fas fa-edit"></i></a>-->
+                                    <a href="#modal1" class="btn btn-primary" data-toggle="modal"><i class="fas fa-edit"></i></a>
                                 </td>
-                            </tr>
-                        </c:forEach>
-                    </c:if>
+                                <td>
+                                    <a href="delete.htm?id=${listar[i].NoControl}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </c:forEach>
+                        </c:if>
                 </tbody>
             </table>
         </div>
+        <!--Inicio modal-->
+        <div class="modal fade" id="modal1">
+            <!--modal-lg: sirve para cambiar el tamaño del modal-->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar datos del alumno(a)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!--inicia formulario-->
+                        <form class="col-12" method="POST">
+                            <div class="form-group" id="user-group">
+                                <input class="form-control" type="text" placeholder="No. Control" name="Matricula"/>                            
+                            </div>
+                            <div class="form-group" id="user-name">
+                                <input class="form-control" type="text" placeholder="Nombres" name="Nombre"/>                            
+                            </div>
+                            <div class="form-group" id="user-pat">
+                                <input class="form-control" type="text" placeholder="Apellido paterno" name="APaterno"/>                            
+                            </div>
+                            <div class="form-group" id="user-mat">
+                                <input class="form-control" type="text" placeholder="Apellido materno" name="AMaterno"/>              
+                            </div>
+                            <div class="form-group" id="user-especial">
+                                <input class="form-control" type="text" placeholder="Especialidad" name="Especialidad"/>                            
+                            </div>
+                            <div class="form-group" id="user-mail">
+                                <input class="form-control" type="text" placeholder="Email" name="Email"/>                            
+                            </div>
+                        </form>
+                        <!--fin formulario-->
+                        <!--form-->
+                        <!--fin form-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" value="Actualizar" class="btn-act" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin modal-->
     </div>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    <!--js-->
     <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {
