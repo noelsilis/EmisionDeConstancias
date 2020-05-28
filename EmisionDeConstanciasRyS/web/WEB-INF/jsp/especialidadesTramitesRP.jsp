@@ -30,7 +30,7 @@
                             <c:if test = "${(i%2) == 0}">
                                 <c:set var="clas" value="btn-one"/>
                             </c:if>
-                            <td><a href="adminResiden.htm?sp=${i}" arget="contenedorIFrame" class="${clas}"><i class="fas fa-users"></i></a></td>
+                            <td><a href="adminResiden.htm?sp=${i}" arget="contenedorIFrame" class="${clas}"><i class="fas fa-folder-open"></i></a></td>
                         </tr>
                     </c:forEach>
                 </table> 

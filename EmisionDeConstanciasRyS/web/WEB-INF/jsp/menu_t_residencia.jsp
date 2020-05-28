@@ -14,7 +14,7 @@
     <body>
         <!--<input type="checkbox" id="check">-->
         <div class="margen1">
-            <h1>Trámite Residencia Social</h1>
+            <h1>Trámite Residencia Profesional</h1>
             <div class="margen2">
                 <div class="margen3">
                     <h3>Proceso</h3>
