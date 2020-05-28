@@ -98,27 +98,28 @@
                                 <div class="form-group" id="user-mat">
                                     <input class="form-control" type="text" placeholder="Apellido materno" name="Matricula"/>                            
                                 </div>
-                                <div class="form-group" id="user-group">
+                                <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Nombre de Usuario" name="Matricula"/>                            
                                 </div>
-                                <div class="form-group" id="contrasena-group">
-                                    <input class="form-control" type="password" placeholder="Contraseña" name="pass"/>                            
+                                <div class="form-group" >
+                                    <input class="form-control" id="cnueva" type="text" placeholder="Contraseña" name="pass"/>                            
                                 </div>
-                                <div class="form-group" id="rcontrasena-group">
-                                    <input class="form-control" type="password" placeholder="Confirmar contraseña" name="pass"/>                            
+                                <div class="form-group">
+                                    <input class="form-control" id="rcnueva" type="text" placeholder="Confirmar contraseña" name="cpass"/>                            
                                 </div>
                             </form>
                             <!--fin formulario-->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn-guardar">Agregar</button>
+                            <button type="submit" class="btn-guardar" id="btnagregar" onclick="asignar();return false;">Agregar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Fin modal2-->
         </div>
+        <script type="text/javascript" src="jsVista/configuracion.js"></script>
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
