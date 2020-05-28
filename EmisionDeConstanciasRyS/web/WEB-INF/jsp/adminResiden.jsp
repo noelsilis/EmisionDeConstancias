@@ -44,7 +44,7 @@
                                 <td>${tmp[i].NoControl}</td>
                                 <td>
                                     <a href="#?id=${tmp[i].idtramites}" arget="contenedorIFrame" class="btn btn-info"> Editar </a>
-                                    <a href="borrarS.htm?id=${tmp[i].idtramites}"class="btn btn-danger">Borrar</a>
+                                    <a href="borrarR.htm?id=${tmp[i].idtramites}"class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -53,7 +53,6 @@
             </table>
         </div>
     </div>
-    <h1 id="tam" style="font-size:0px;"><c:out value = "${tamTra}"/></h1>  
     <script type="text/javascript" src="jsVista/menu_t_servicio.js"></script>
     <!-- Remember to include jQuery :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

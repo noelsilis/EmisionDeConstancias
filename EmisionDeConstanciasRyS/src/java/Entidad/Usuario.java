@@ -18,6 +18,8 @@ public class Usuario {
     String AMaterno;
     String Especialidad;
     String Email;
+    String X;
+    String Y;
 
     public String getMatricula() {
         return Matricula;
@@ -74,5 +76,21 @@ public class Usuario {
     public void setEmail(String Email) {
         this.Email = Email;
     }
+
+    public String getX() {
+        return X;
+    }
+
+    public void setX(String X) {
+        this.X = X;
+    }
+
+    public String getY() {
+        return Y;
+    }
+
+    public void setY(String Y) {
+        this.Y = Y;
+    }    
     
 }

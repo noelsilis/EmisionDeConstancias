@@ -30,6 +30,9 @@
                 <prop key="editarAlumno.htm">controlador</prop>
                 <prop key="delete.htm">controlador</prop>
                 <prop key="adminServicio.htm">controlador</prop>
+                <prop key="adminResiden.htm">controlador</prop>
+                <prop key="borrarS.htm">controlador</prop>
+                <prop key="borrarR.htm">controlador</prop>
             </props>
         </property>
     </bean>

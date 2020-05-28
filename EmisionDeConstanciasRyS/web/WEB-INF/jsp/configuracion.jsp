@@ -34,7 +34,7 @@
                     </button>
                 </div>
                 <div class="margen3-1-2">
-                    
+
                 </div>
             </div>
             <!--<a href="#modal1" class="btn btn-primary" data-toggle="modal">Boton Enlace</a>-->
@@ -53,29 +53,25 @@
                             <!--inicia formulario-->
                             <form class="col-12" method="POST">
                                 <div class="form-group" id="user-group">
-                                    <input class="form-control" type="text" placeholder="Usuario" name="Matricula"/>                            
+                                    <c:forEach var="dato" items="${lista}">
+                                        <input class="form-control" type="text" placeholder="Usuario" name="X" value="${dato.NoControl}"/>    
                                 </div>
                                 <div class="form-group" id="contrasena-group">
-                                    <input class="form-control" type="password" placeholder="Contraseña actual" name="pass"/>                            
+                                    <input class="form-control" type="password" placeholder="Contraseña actual" name="Y" value="${dato.Contraseña}"/> 
+                                     </c:forEach>
                                 </div>
-                                <div class="form-group" id="rcontrasena-group">
-                                    <input class="form-control" type="password" placeholder="Nueva contraseña" name="pass"/>                            
-                                </div>
-                                <div class="form-group" id="rcontrasena-group">
-                                    <input class="form-control" type="password" placeholder="Repetir nueva contraseña" name="pass"/>                            
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit?id=${dato.NoControl}" class="btn-guardar">Editar</button>
                                 </div>
                             </form>
                             <!--fin formulario-->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn-guardar">Editar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Fin modal-->
-             <!--Inicia modal2-->
+            <!--Inicia modal2-->
             <div class="modal fade" id="modal2">
                 <!--modal-lg: sirve para cambiar el tamaño del modal-->
                 <div class="modal-dialog">
@@ -90,36 +86,32 @@
                             <!--inicia formulario-->
                             <form class="col-12" method="POST">
                                 <div class="form-group" id="user-nomb">
-                                    <input class="form-control" type="text" placeholder="Nombre" name="Matricula"/>                            
+                                    <input class="form-control" type="text" placeholder="Nombre" name="Nombre"/>                            
                                 </div>
                                 <div class="form-group" id="user-pat">
-                                    <input class="form-control" type="text" placeholder="Apellido paterno" name="Matricula"/>                            
+                                    <input class="form-control" type="text" placeholder="Apellido paterno" name="APaterno"/>                            
                                 </div>
                                 <div class="form-group" id="user-mat">
-                                    <input class="form-control" type="text" placeholder="Apellido materno" name="Matricula"/>                            
+                                    <input class="form-control" type="text" placeholder="Apellido materno" name="AMaterno"/>                            
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="user-group">
                                     <input class="form-control" type="text" placeholder="Nombre de Usuario" name="Matricula"/>                            
                                 </div>
-                                <div class="form-group" >
-                                    <input class="form-control" id="cnueva" type="text" placeholder="Contraseña" name="pass"/>                            
+                                <div class="form-group" id="contrasena-group">
+                                    <input class="form-control" type="password" placeholder="Contraseña" name="pass"/>                            
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="rcnueva" type="text" placeholder="Confirmar contraseña" name="cpass"/>                            
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn-guardar">Agregar</button>
                                 </div>
                             </form>
                             <!--fin formulario-->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn-guardar" id="btnagregar" onclick="asignar();return false;">Agregar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Fin modal2-->
         </div>
-        <script type="text/javascript" src="jsVista/configuracion.js"></script>
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

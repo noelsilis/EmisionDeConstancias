@@ -23,14 +23,16 @@
                         <th>Especialidad</th>
                         <th>Trámite</th>
                     </tr>
-                    <tr>
-                        <td>INGENIERÍA EN SISTEMAS COMPUTACIONALES</td>
-                        <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>INGENIERÍA TECNOLOGÍAS DE LA INFROMACIÓN Y COMUNICACIÓN</td>
-                        <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
-                    </tr>
+                    <c:forEach var = "i" begin = "0" end = "${tamEsp}">
+                        <tr>
+                            <td>${listaEsp[i].Especialidad}</td>
+                            <c:set var="clas" value="btn-two"/>
+                            <c:if test = "${(i%2) == 0}">
+                                <c:set var="clas" value="btn-one"/>
+                            </c:if>
+                            <td><a href="adminResiden.htm?sp=${i}" arget="contenedorIFrame" class="${clas}"><i class="fas fa-users"></i></a></td>
+                        </tr>
+                    </c:forEach>
                 </table> 
             </div>
         </div>

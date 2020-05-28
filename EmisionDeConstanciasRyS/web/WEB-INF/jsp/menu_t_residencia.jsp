@@ -8,12 +8,13 @@
         <link rel="stylesheet" href="cssVista/menu_t_servicio.css" type="text/css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
         <title>Tramite Servicio</title>
     </head>
     <body>
         <!--<input type="checkbox" id="check">-->
         <div class="margen1">
-            <h1>Trámite Residencia Profesional</h1>
+            <h1>Trámite Residencia Social</h1>
             <div class="margen2">
                 <div class="margen3">
                     <h3>Proceso</h3>

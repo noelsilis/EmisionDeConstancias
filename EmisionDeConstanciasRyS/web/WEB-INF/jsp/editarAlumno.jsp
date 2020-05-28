@@ -1,9 +1,3 @@
-<%-- 
-    Document   : editar
-    Created on : 18/01/2020, 09:38:39 PM
-    Author     : Alejandro
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -49,13 +43,12 @@
                         <div class="form-group" id="user-mail">
                             <input class="form-control" type="text" placeholder="Email" name="Email" value="${tmp[0].Email}"/>                            
                         </div>
-
+                        <div class="col-12 forgot">
+                            <input type="submit" value="Actualizar" class="btn btn-success" >
+                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>
+                        </div>
                     </form>
                     <!--fin formulario-->
-                    <div class="col-12 forgot">
-                        <input type="submit" value="Actualizar" class="btn btn-success" >
-                        <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>
-                    </div>
                 </div>
             </div>
         </div>
