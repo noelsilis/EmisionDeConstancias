@@ -20,35 +20,36 @@
         <div class="modal-dialog text-center">
             <div class="col-sm-10 main-section">
                 <div class="modal-content">
-                    <div class="col-12" style="padding-top: 20px; padding-bottom: 20px; color: white">
-                        <h4>Editar datos</h4>
+                    <div class="col-12 encabezado">
+                        <h4>Agregar datos</h4>
                     </div>
                     <!--inicia formulario-->
                     <form class="col-12" method="POST">
-                        <div class="form-group" id="user-group">
-                            <input class="form-control" type="text" placeholder="No. Control" name="Matricula" value="${tmp[0].NoControl}"/>                            
-                        </div>
-                        <div class="form-group" id="user-name">
-                            <input class="form-control" type="text" placeholder="Nombre(s)" name="Nombre"  value="${tmp[0].Nombres}"/>                            
+                        <div class="form-group" id="user-nomb">
+                            <input class="form-control" type="text" placeholder="Nombre" name="Matricula"/>                            
                         </div>
                         <div class="form-group" id="user-pat">
-                            <input class="form-control" type="text" name="APaterno" value="${tmp[0].APaterno}"/>                            
+                            <input class="form-control" type="text" placeholder="Apellido paterno" name="Matricula"/>                            
                         </div>
                         <div class="form-group" id="user-mat">
-                            <input class="form-control" type="text" placeholder="Apellido materno" name="AMaterno" value="${tmp[0].AMaterno}"/>              
+                            <input class="form-control" type="text" placeholder="Apellido materno" name="Matricula"/>                            
                         </div>
-                        <div class="form-group" id="user-especial">
-                            <input class="form-control" type="text" placeholder="Especialidad" name="Especialidad" value="${tmp[0].Especialidad}"/>                            
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Nombre de Usuario" name="Matricula"/>                            
                         </div>
-                        <div class="form-group" id="user-mail">
-                            <input class="form-control" type="text" placeholder="Email" name="Email" value="${tmp[0].Email}"/>                            
+                        <div class="form-group" >
+                            <input class="form-control" id="cnueva" type="text" placeholder="Contraseña" name="pass"/>                            
                         </div>
-                        <div class="col-12 forgot">
-                            <input type="submit" value="Actualizar" class="btn btn-success" >
-                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>
+                        <div class="form-group">
+                            <input class="form-control" id="rcnueva" type="text" placeholder="Confirmar contraseña" name="cpass"/>                            
                         </div>
+
                     </form>
                     <!--fin formulario-->
+                    <div class="col-12 forgot">
+                        <input type="submit" value="Agregar" class="btn btn-success" >
+                        <a href="configuarcion.htm" arget="contenedorIFrame" class="btn btn-primary">Regresar</a>
+                    </div>
                 </div>
             </div>
         </div>
