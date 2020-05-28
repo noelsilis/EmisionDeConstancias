@@ -57,19 +57,19 @@ h1{
 }
 
 .form-group#contrasena-group::before{
-    content: "\f023";
+    content: "\f13e";
     color: #ccc;
 }
 .form-group#rcontrasena-group::before{
-    content: "\f023";
+    content: "\f13e";
     color: #ccc;
 }
 .forgot a{
     color: white;
 }
-.btn-iniciar{
-    width: 60%;
-    margin: 5px 0 25px;
+.btn-guardar{
+    width: 20%;
+    margin: 5px 5px 5px;
     height: 40px;
     border-radius:100px; 
     background: #e63c4f;
@@ -81,8 +81,31 @@ h1{
     font-size: 15px;
     transition: 0.3s ease all;
 }
-.btn-iniciar:hover{
+.btn-guardar:hover{
     background:white;
     color: #e63c4f;
     /*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
+}
+.btn-cerrar{
+    width: 20%;
+    margin: 5px 5px 5px;
+    height: 40px;
+    border-radius:100px; 
+    background: gray;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease all;
+}
+.btn-cerrar:hover{
+    background:white;
+    color: grey;
+    /*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
+}
+
+#modal1{
+    margin-top: 150px; 
 }
