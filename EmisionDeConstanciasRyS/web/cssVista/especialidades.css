@@ -1,0 +1,86 @@
+body{
+    background: url(../imgVista/ITSOEH-fondo.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.margen1{
+    margin:7%;
+    border: 1px;
+}
+.margen2{
+    background: gainsboro;
+    border: 1px solid gainsboro;
+    margin: 20px;
+    border-radius: 100px;
+}
+.margen1 .margen2 .margen3{
+    margin-left: 30px;
+}
+.margen1 .margen3_1{
+    background: white;
+    border: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+/*Inicia css tabla*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #e63c4f;
+    color: white;
+}
+/*fin css tabla*/
+/*inicio css btn descarga*/
+.btn-one{
+    width: 40px;
+    height: 15px;
+    background: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    padding-right: 10px;
+    padding-left: 5px;
+    color: #19B3D3;
+    font-size: 15px;
+    transition: 0.3s ease all;
+}
+.btn-one:hover{
+    background:#f2f2f2;
+    color: midnightblue;
+/*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
+}
+.btn-two{
+    width: 40px;
+    height: 15px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 10px;
+    color: #19B3D3;
+    font-size: 15px;
+    transition: 0.3s ease all;
+}
+.btn-two:hover{
+    background:white;
+    color: midnightblue;
+/*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
+}
+/*fin icono decarga*/
+

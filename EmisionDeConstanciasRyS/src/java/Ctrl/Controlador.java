@@ -118,7 +118,7 @@ public class Controlador {
                 + "AMaterno=?, Especialidad=?, Email=? where NoControl=?";
         this.jdbcTemplate.update(sql, u.getMatricula(), u.getNombre(), u.getAPaterno(),
                 u.getAMaterno(), u.getEspecialidad(), u.getEmail(), no);
-        tmp2=true;
+        tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
     }
 
@@ -127,10 +127,24 @@ public class Controlador {
         no = request.getParameter("id");
         String sql = "delete from alumnos where NoControl=" + no;
         this.jdbcTemplate.update(sql);
-        tmp2=true;
+        tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
     }
-
+    @RequestMapping("especialidadesTramitesSS.htm")
+    public ModelAndView especialidadesTramitesSS() {
+        mav.setViewName("especialidadesTramitesSS");
+        return mav;
+    }
+    @RequestMapping("especialidadesTramitesRP.htm")
+    public ModelAndView especialidadesTramitesRP() {
+        mav.setViewName("especialidadesTramitesRP");
+        return mav;
+    }
+    @RequestMapping("configuracion.htm")
+    public ModelAndView configuracion() {
+        mav.setViewName("configuracion");
+        return mav;
+    }
     @RequestMapping("adminServicio.htm")
     public ModelAndView adminServicio() {
         String sql = "select * from alumnos where NoControl<>'" + mat + "'";
@@ -142,7 +156,10 @@ public class Controlador {
         return mav;
     }
 }
+    
+    
 
+    
 //"select * from alumnos where NoControl='" + u.getMatricula() + "' and Contraseña='" + u.getPass() + "'";
 //"select*from tramites where NoControl=" + mat + " and tipoTramite like '%ervicio%'";
 //"select*from tramites where NoControl=" + mat + " and tipoTramite like '%esidencia%'";

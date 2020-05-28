@@ -1,0 +1,88 @@
+body{
+    background: url(../imgVista/ITSOEH-fondo.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.margen1{
+    margin:7%;
+    border: 1px;
+}
+.margen2{
+    background: gainsboro;
+    border: 1px solid gainsboro;
+    margin: 20px;
+    border-radius: 100px;
+}
+.margen1 .margen2 .margen3{
+    margin-left: 30px;
+}
+.margen1 .margen3_1{
+    background: white;
+    border: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+.form-group input{
+    background: #084866;
+    height: 45px;
+    font-size: 18px;
+    border:0;
+    padding-left: 54px;
+    border-radius: 25px;
+}
+.form-group input:enabled{
+    background: white;
+    color:#ccc;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    color:grey;
+    position: absolute;
+    left: 28px;
+    font-size: 25px;
+    padding-top:5px;
+}
+
+.form-group#user-group::before{
+    content: "\f007";
+    color: #ccc;
+}
+
+.form-group#contrasena-group::before{
+    content: "\f023";
+    color: #ccc;
+}
+.form-group#rcontrasena-group::before{
+    content: "\f023";
+    color: #ccc;
+}
+.forgot a{
+    color: white;
+}
+.btn-iniciar{
+    width: 60%;
+    margin: 5px 0 25px;
+    height: 40px;
+    border-radius:100px; 
+    background: #e63c4f;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease all;
+}
+.btn-iniciar:hover{
+    background:white;
+    color: #e63c4f;
+    /*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
+}
