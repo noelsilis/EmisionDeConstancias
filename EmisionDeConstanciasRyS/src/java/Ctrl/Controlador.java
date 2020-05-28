@@ -279,7 +279,7 @@ public class Controlador {
     @RequestMapping("delete.htm")
     public ModelAndView Delete(HttpServletRequest request) {
         no = request.getParameter("id");
-        String sql = "delete from alumnos where NoControl=" + no;
+        String sql = "delete from alumnos where NoControl='" + no + "'";
         this.jdbcTemplate.update(sql);
         tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
