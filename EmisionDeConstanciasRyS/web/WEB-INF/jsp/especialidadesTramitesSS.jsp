@@ -11,7 +11,6 @@
         <title>Especialidades</title>
     </head>
     <body>
-
         <div class="margen1">
             <h1>Trámite Servicio Social</h1>
             <div class="margen2">
@@ -25,6 +24,10 @@
                     </tr>
                     <tr>
                         <td>INGENIERÍA TECNOLOGÍAS DE LA INFROMACIÓN Y COMUNICACIÓN</td>
+                        <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>INGENIERÍA EN SISTEMAS COMPUTACIONALES</td>
                         <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
                     </tr>
                 </table>

@@ -27,7 +27,11 @@
                         <td>INGENIERÍA EN SISTEMAS COMPUTACIONALES</td>
                         <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
                     </tr>
-                </table>
+                    <tr>
+                        <td>INGENIERÍA TECNOLOGÍAS DE LA INFROMACIÓN Y COMUNICACIÓN</td>
+                        <td><a class="btn-one"><i class="fas fa-users"></i></a></td>
+                    </tr>
+                </table> 
             </div>
         </div>
 

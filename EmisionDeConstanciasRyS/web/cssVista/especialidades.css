@@ -1,9 +1,9 @@
 body{
     background: url(../imgVista/ITSOEH-fondo.png) no-repeat;
     background-size: cover;
+    box-sizing: border-box;
     height: 100vh;
     transition: 0.5s;
-    box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 .margen1{
@@ -80,7 +80,6 @@ th {
 .btn-two:hover{
     background:white;
     color: midnightblue;
-/*    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);*/
 }
-/*fin icono decarga*/
+
 
