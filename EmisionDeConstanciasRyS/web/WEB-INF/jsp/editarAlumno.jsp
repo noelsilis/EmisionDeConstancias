@@ -13,7 +13,7 @@
         <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
         <link rel="shortcut icon" href="imgVista/ico.png">
         <!-- Nuestro css-->
-        <link rel="stylesheet" type="text/css" href="cssVista/formularios.css">
+        <link rel="stylesheet" type="text/css" href="cssVista/index.css">
         <title>Crud</title>
     </head>
     <body>
@@ -29,7 +29,7 @@
                             <input class="form-control" type="text" placeholder="No. Control" name="Matricula" value="${tmp[0].NoControl}"/>                            
                         </div>
                         <div class="form-group" id="user-name">
-                            <input class="form-control" type="text" placeholder="Nombre(s)" name="Nombre"  value="${tmp[0].Nombres}"/>                            
+                            <input class="form-control" type="text" placeholder="Nombres" name="Nombre"  value="${tmp[0].Nombres}"/>                            
                         </div>
                         <div class="form-group" id="user-pat">
                             <input class="form-control" type="text" name="APaterno" value="${tmp[0].APaterno}"/>                            

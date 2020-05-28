@@ -312,13 +312,13 @@ public class Controlador {
     }
 
     @RequestMapping(value = "configuracion.htm", method = RequestMethod.POST)
-    public ModelAndView configuracion(Usuario u, HttpServletRequest request) {
+    public ModelAndView configuracion(Usuario u) {
         String sql;
-        if (u.getX()!=null && u.getY()!=null) {
+        if (u.getX() != null && u.getY() != null) {
             sql = "update alumnos set NoControl=?, Contraseña=? where NoControl=?";
             this.jdbcTemplate.update(sql, u.getX(), u.getY(), mat);
         }
-        if (u.getMatricula()!=null && u.getPass()!=null && u.getNombre()!=null && u.getAPaterno()!=null && u.getAMaterno()!=null) {
+        if (u.getMatricula() != null && u.getPass() != null && u.getNombre() != null && u.getAPaterno() != null && u.getAMaterno() != null) {
             sql = "insert into alumnos(NoControl, Contraseña, Nombres, APaterno, AMaterno, Especialidad)values(?,?,?,?,?,?)";
             this.jdbcTemplate.update(sql, u.getMatricula(), u.getPass(), u.getNombre(), u.getAPaterno(), u.getAMaterno(), "X");
         }
