@@ -130,19 +130,7 @@ public class Controlador {
         tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
     }
-    @RequestMapping("adminServicio.htm")
-    public ModelAndView adminServicio() {
-        String sql = "select * from alumnos where NoControl<>'" + mat + "'";
-        List datos = this.jdbcTemplate.queryForList(sql);
-        int tamAr = datos.size() - 1;
-        mav.addObject("listar", datos);
-        mav.addObject("tamAr", tamAr);
-        mav.setViewName("adminServicio");
-        return mav;
-    }
-}
-    
-@RequestMapping("especialidadesTramitesSS.htm")
+    @RequestMapping("especialidadesTramitesSS.htm")
     public ModelAndView especialidadesTramitesSS() {
         mav.setViewName("especialidadesTramitesSS");
         return mav;
@@ -157,6 +145,18 @@ public class Controlador {
         mav.setViewName("configuracion");
         return mav;
     }
+    @RequestMapping("adminServicio.htm")
+    public ModelAndView adminServicio() {
+        String sql = "select * from alumnos where NoControl<>'" + mat + "'";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        int tamAr = datos.size() - 1;
+        mav.addObject("listar", datos);
+        mav.addObject("tamAr", tamAr);
+        mav.setViewName("adminServicio");
+        return mav;
+    }
+}
+    
 
     
 //"select * from alumnos where NoControl='" + u.getMatricula() + "' and Contraseña='" + u.getPass() + "'";

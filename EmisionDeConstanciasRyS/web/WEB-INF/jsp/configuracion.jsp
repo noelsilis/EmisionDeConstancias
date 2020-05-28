@@ -20,9 +20,24 @@
         <div class="margen1">
             <h1>Configuración</h1>
             <div class="margen2">
-                <div class="margen3"><h3>Administrador</h3></div>
+                <div class="margen3">
+                    <h3>Administrador</h3>
+                </div>
             </div>
-            <a href="#modal1" class="btn btn-primary" data-toggle="modal">Boton Enlace</a>
+            <div class="margen3_1">
+                <div class="margen3-1-1">
+                    <button type="button" class="btn-editar" data-toggle="modal" data-target="#modal1">
+                        <i class="fas fa-user-edit"></i>
+                    </button>
+                    <button type="button" class="btn-agregar" data-toggle="modal" data-target="#modal2">
+                        <i class="fas fa-user-plus"></i>
+                    </button>
+                </div>
+                <div class="margen3-1-2">
+                    
+                </div>
+            </div>
+            <!--<a href="#modal1" class="btn btn-primary" data-toggle="modal">Boton Enlace</a>-->
             <!--Inicia modal-->
             <div class="modal fade" id="modal1">
                 <!--modal-lg: sirve para cambiar el tamaño del modal-->
@@ -35,34 +50,74 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <!--inicia formulario
-                            <div class="modal-dialog text-center">  
-                                <div class="col-sm-10 main-section">
-                                    <div class="modal-content">-->
-                                        <form class="col-12" method="POST">
-                                            <div class="form-group" id="user-group">
-                                                <input class="form-control" type="text" placeholder="Usuario" name="Matricula"/>                            
-                                            </div>
-                                            <div class="form-group" id="contrasena-group">
-                                                <input class="form-control" type="password" placeholder="Contraseña" name="pass"/>                            
-                                            </div>
-                                            <div class="form-group" id="rcontrasena-group">
-                                                <input class="form-control" type="password" placeholder="Repetir Contraseña" name="pass"/>                            
-                                            </div>
-                                        </form>
-                                    <!--</div>
+                            <!--inicia formulario-->
+                            <form class="col-12" method="POST">
+                                <div class="form-group" id="user-group">
+                                    <input class="form-control" type="text" placeholder="Usuario" name="Matricula"/>                            
                                 </div>
-                            </div>
-                            fin formulario-->
+                                <div class="form-group" id="contrasena-group">
+                                    <input class="form-control" type="password" placeholder="Contraseña actual" name="pass"/>                            
+                                </div>
+                                <div class="form-group" id="rcontrasena-group">
+                                    <input class="form-control" type="password" placeholder="Nueva contraseña" name="pass"/>                            
+                                </div>
+                                <div class="form-group" id="rcontrasena-group">
+                                    <input class="form-control" type="password" placeholder="Repetir nueva contraseña" name="pass"/>                            
+                                </div>
+                            </form>
+                            <!--fin formulario-->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn-guardar">Guardar</button>
+                            <button type="submit" class="btn-guardar">Editar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Fin modal-->
+             <!--Inicia modal2-->
+            <div class="modal fade" id="modal2">
+                <!--modal-lg: sirve para cambiar el tamaño del modal-->
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Agregar nuevo administrador</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!--inicia formulario-->
+                            <form class="col-12" method="POST">
+                                <div class="form-group" id="user-nomb">
+                                    <input class="form-control" type="text" placeholder="Nombre" name="Matricula"/>                            
+                                </div>
+                                <div class="form-group" id="user-pat">
+                                    <input class="form-control" type="text" placeholder="Apellido paterno" name="Matricula"/>                            
+                                </div>
+                                <div class="form-group" id="user-mat">
+                                    <input class="form-control" type="text" placeholder="Apellido materno" name="Matricula"/>                            
+                                </div>
+                                <div class="form-group" id="user-group">
+                                    <input class="form-control" type="text" placeholder="Nombre de Usuario" name="Matricula"/>                            
+                                </div>
+                                <div class="form-group" id="contrasena-group">
+                                    <input class="form-control" type="password" placeholder="Contraseña" name="pass"/>                            
+                                </div>
+                                <div class="form-group" id="rcontrasena-group">
+                                    <input class="form-control" type="password" placeholder="Confirmar contraseña" name="pass"/>                            
+                                </div>
+                            </form>
+                            <!--fin formulario-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn-guardar">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fin modal2-->
         </div>
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

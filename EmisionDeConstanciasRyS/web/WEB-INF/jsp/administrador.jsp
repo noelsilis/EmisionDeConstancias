@@ -47,7 +47,7 @@
                     <a href="datosAlumno.htm" target="contenedorIFrame" class="config-admin"><i class="fas fa-address-card"></i><span class="second">Datos Alumnos</span></a>
                 </li>
                 <li>
-                    <a class="config-admin"><i class="fas fa-cog"></i><span class="third">Configuración</span></a>
+                    <a href="configuracion.htm" target="contenedorIFrame" class="config-admin"><i class="fas fa-cog"></i><span class="third">Configuración</span></a>
                 </li>
             </ul>
         </div>
