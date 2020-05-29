@@ -333,32 +333,32 @@ public class Controlador {
         return new ModelAndView("redirect:/configuracion.htm");
     }
 
-    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.GET)
-    public ModelAndView agregarTramite() {
-        mav.addObject(new Usuario());
-        mav.setViewName("agregarTramite");
-        return mav;
-    }
-
-    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.POST)
-    public ModelAndView agregarTramite(Usuario u) {
-        if (u.getTipoTramite() != null && u.getNoControl() != null) {
-            if (u.getVistaDoc() == null) {
-                u.setVistaDoc("");
-            }
-            if (u.getDescargaDoc() == null) {
-                u.setDescargaDoc("");
-            }
-            if (u.getFechaEntrega() == null) {
-                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?)";
-                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
-            } else {
-                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, fechaEntrega, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?,?)";
-                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getFechaEntrega(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
-            }
-        }
-        return new ModelAndView("redirect:/especialidadesTramitesSS.htm");
-    }
+//    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.GET)
+//    public ModelAndView agregarTramite() {
+//        mav.addObject(new Usuario());
+//        mav.setViewName("agregarTramite");
+//        return mav;
+//    }
+//
+//    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.POST)
+//    public ModelAndView agregarTramite(Usuario u) {
+//        if (u.getTipoTramite() != null && u.getNoControl() != null) {
+//            if (u.getVistaDoc() == null) {
+//                u.setVistaDoc("");
+//            }
+//            if (u.getDescargaDoc() == null) {
+//                u.setDescargaDoc("");
+//            }
+//            if (u.getFechaEntrega() == null) {
+//                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?)";
+//                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
+//            } else {
+//                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, fechaEntrega, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?,?)";
+//                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getFechaEntrega(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
+//            }
+//        }
+//        return new ModelAndView("redirect:/especialidadesTramitesSS.htm");
+//    }
 
     @RequestMapping(value = "editarTramiteS.htm", method = RequestMethod.GET)
     public ModelAndView editarTramiteS(HttpServletRequest request) {
@@ -370,7 +370,7 @@ public class Controlador {
         mav.setViewName("editarTramite");
         return mav;
     }
-
+   
     @RequestMapping(value = "editarTramiteS.htm", method = RequestMethod.POST)
     public ModelAndView editarTramiteS(Usuario u) {
         if (u.getTipoTramite() != null && u.getNoControl() != null) {
