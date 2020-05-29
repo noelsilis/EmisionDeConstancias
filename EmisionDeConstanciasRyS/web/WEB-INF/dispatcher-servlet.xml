@@ -33,6 +33,9 @@
                 <prop key="adminResiden.htm">controlador</prop>
                 <prop key="borrarS.htm">controlador</prop>
                 <prop key="borrarR.htm">controlador</prop>
+                <prop key="agregarTramite.htm">controlador</prop>
+                <prop key="editarTramiteS.htm">controlador</prop>
+                <prop key="editarTramiteR.htm">controlador</prop>
             </props>
         </property>
     </bean>

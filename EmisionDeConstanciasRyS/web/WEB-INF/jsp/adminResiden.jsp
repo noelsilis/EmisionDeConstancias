@@ -35,7 +35,7 @@
                     <th>Estado</th>
                     <th>Entrega</th>
                     <th>NoControl</th>
-                    <th><a href="#" arget="contenedorIFrame" class="btn btn-danger"><i class="fas fa-plus"></i></a></th>
+                    <th></th>
                 </tr>
                 <tbody id="myTable">
                     <c:if test = "${tamTra>=0}">
@@ -47,7 +47,7 @@
                                 <td>${tmp[i].fechaEntrega}</td>
                                 <td>${tmp[i].NoControl}</td>
                                 <td>
-                                    <a href="#?id=${tmp[i].idtramites}" arget="contenedorIFrame" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                    <a href="editarTramiteR.htm?id=${tmp[i].idtramites}" arget="contenedorIFrame" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a href="borrarR.htm?id=${tmp[i].idtramites}"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

@@ -20,6 +20,12 @@ public class Usuario {
     String Email;
     String X;
     String Y;
+    String tipoTramite;
+    String estado;
+    String fechaEntrega;
+    String vistaDoc;
+    String descargaDoc;
+    String NoControl;
 
     public String getMatricula() {
         return Matricula;
@@ -92,5 +98,54 @@ public class Usuario {
     public void setY(String Y) {
         this.Y = Y;
     }    
+
+    public String getTipoTramite() {
+        return tipoTramite;
+    }
+
+    public void setTipoTramite(String tipoTramite) {
+        this.tipoTramite = tipoTramite;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getFechaEntrega() {
+        return fechaEntrega;
+    }
+
+    public void setFechaEntrega(String fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+
+    public String getVistaDoc() {
+        return vistaDoc;
+    }
+
+    public void setVistaDoc(String vistaDoc) {
+        this.vistaDoc = vistaDoc;
+    }
+
+    public String getDescargaDoc() {
+        return descargaDoc;
+    }
+
+    public void setDescargaDoc(String descargaDoc) {
+        this.descargaDoc = descargaDoc;
+    }
+
+    public String getNoControl() {
+        return NoControl;
+    }
+
+    public void setNoControl(String NoControl) {
+        this.NoControl = NoControl;
+    }
+    
     
 }

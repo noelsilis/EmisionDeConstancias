@@ -5,6 +5,7 @@
     <head>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
         <link rel="shortcut icon" href="imgVista/ico.png">
         <link rel="stylesheet" href="cssVista/especialidades.css" type="text/css">
         <meta content="text/html; charset=UTF-8">
@@ -21,6 +22,7 @@
                     <tr>
                         <th>Especialidad</th>
                         <th>Trámite</th>
+                        <th><a href="agregarTramite.htm" arget="contenedorIFrame" class="btn btn-danger"><i class="fas fa-plus"></i></a></th>
                     </tr>
                     <c:forEach var = "i" begin = "0" end = "${tamEsp}">
                         <tr>
@@ -30,6 +32,7 @@
                                 <c:set var="clas" value="btn-one"/>
                             </c:if>
                             <td><a href="adminServicio.htm?sp=${i}" arget="contenedorIFrame" class="${clas}"><i class="fas fa-folder-open"></i></a></td>
+                            <td></td>
                         </tr>
                     </c:forEach>
                 </table>
