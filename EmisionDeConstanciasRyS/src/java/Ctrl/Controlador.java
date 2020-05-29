@@ -98,6 +98,12 @@ public class Controlador {
         mav.setViewName("menu_t_servicio");
         return mav;
     }
+    
+    @RequestMapping("agregarTramite.htm")
+    public ModelAndView agregarTramite() {
+        mav.setViewName("agregarTramite");
+        return mav;
+    }
 
     @RequestMapping("menu_t_residencia.htm")
     public ModelAndView menu_t_residencia() {
@@ -275,6 +281,7 @@ public class Controlador {
         tmp3 = true;
         return mav;
     }
+    
 
     @RequestMapping("delete.htm")
     public ModelAndView Delete(HttpServletRequest request) {

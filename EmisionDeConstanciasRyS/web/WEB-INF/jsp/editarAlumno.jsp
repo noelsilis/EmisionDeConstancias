@@ -13,14 +13,14 @@
         <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
         <link rel="shortcut icon" href="imgVista/ico.png">
         <!-- Nuestro css-->
-        <link rel="stylesheet" type="text/css" href="cssVista/index.css">
+        <link rel="stylesheet" type="text/css" href="cssVista/formularios.css">
         <title>Crud</title>
     </head>
     <body>
         <div class="modal-dialog text-center">
             <div class="col-sm-10 main-section">
                 <div class="modal-content">
-                    <div class="col-12" style="padding-top: 20px; padding-bottom: 20px; color: white">
+                    <div class="col-12">
                         <h4>Editar datos</h4>
                     </div>
                     <!--inicia formulario-->
@@ -46,6 +46,7 @@
                         <div class="col-12 forgot">
                             <input type="submit" value="Actualizar" class="btn btn-success" >
                             <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>  
+                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regresar</a>
                         </div>
                     </form>
                     <!--fin formulario-->
