@@ -47,6 +47,7 @@
                         </div>
                         <div class="col-12 forgot">
                             <input type="submit" value="Actualizar" class="btn btn-success" >
+                            <a href="especialidadesTramitesSS.htm" arget="contenedorIFrame" class="btn btn-danger">Cacelar</a>
                         </div>
                     </form>
                     <!--fin formulario-->

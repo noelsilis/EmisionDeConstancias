@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-12 forgot">
                             <input type="submit" value="Actualizar" class="btn btn-success" >
-                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>
+                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>  
                         </div>
                     </form>
                     <!--fin formulario-->
