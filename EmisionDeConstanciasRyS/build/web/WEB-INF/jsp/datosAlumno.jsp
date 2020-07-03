@@ -48,8 +48,8 @@
                                 <td>${listar[i].Nombres}</td>
                                 <td>${listar[i].Especialidad}</td>
                                 <td>
-                                    <!--<a href="editarAlumno.htm?id=${listar[i].NoControl}" class="btn btn-primary"><i class="fas fa-edit"></i></a>-->
-                                    <a href="#modal1" class="btn btn-primary" data-toggle="modal"><i class="fas fa-edit"></i></a>
+                                    <!--<a href="editarAlumno.htm" class="btn btn-primary"><i class="fas fa-edit"></i></a>-->
+                                    <a href="editarAlumno.htm?id=${listar[i].NoControl}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 </td>
                                 <td>
                                     <a href="delete.htm?id=${listar[i].NoControl}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
@@ -71,35 +71,17 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!--inicia formulario-->
-                        <form class="col-12" method="POST">
-                            <div class="form-group" id="user-group">
-                                <input class="form-control" type="text" placeholder="No. Control" name="Matricula"/>                            
-                            </div>
-                            <div class="form-group" id="user-name">
-                                <input class="form-control" type="text" placeholder="Nombres" name="Nombre"/>                            
-                            </div>
-                            <div class="form-group" id="user-pat">
-                                <input class="form-control" type="text" placeholder="Apellido paterno" name="APaterno"/>                            
-                            </div>
-                            <div class="form-group" id="user-mat">
-                                <input class="form-control" type="text" placeholder="Apellido materno" name="AMaterno"/>              
-                            </div>
-                            <div class="form-group" id="user-especial">
-                                <input class="form-control" type="text" placeholder="Especialidad" name="Especialidad"/>                            
-                            </div>
-                            <div class="form-group" id="user-mail">
-                                <input class="form-control" type="text" placeholder="Email" name="Email"/>                            
-                            </div>
-                        </form>
-                        <!--fin formulario-->
+                        <div>
+                            <iframe name="iframeContenedor" src="" width="400" height="400" style="border: none;"></iframe>
+                        </div>
                         <!--form-->
                         <!--fin form-->
+
                     </div>
-                    <div class="modal-footer">
+                    <!--<div class="modal-footer">
                         <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
                         <input type="submit" value="Actualizar" class="btn-act" >
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -127,4 +109,4 @@
         });
     </script>
 </body>
-</html>
+</html

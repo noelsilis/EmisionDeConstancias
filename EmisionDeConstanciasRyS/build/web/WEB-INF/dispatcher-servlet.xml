@@ -19,7 +19,23 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="login.htm">controlador</prop>
+                <prop key="index.htm">controlador</prop>
+                <prop key="inicio.htm">controlador</prop>
+                <prop key="especialidadesTramitesSS.htm">controlador</prop>
+                <prop key="especialidadesTramitesRP.htm">controlador</prop>
+                <prop key="configuracion.htm">controlador</prop>
+                <prop key="menu_t_residencia.htm">controlador</prop>
+                <prop key="menu_t_servicio.htm">controlador</prop>
+                <prop key="datosAlumno.htm">controlador</prop>
+                <prop key="editarAlumno.htm">controlador</prop>
+                <prop key="delete.htm">controlador</prop>
+                <prop key="adminServicio.htm">controlador</prop>
+                <prop key="adminResiden.htm">controlador</prop>
+                <prop key="borrarS.htm">controlador</prop>
+                <prop key="borrarR.htm">controlador</prop>
+                <prop key="agregarTramite.htm">controlador</prop>
+                <prop key="editarTramiteS.htm">controlador</prop>
+                <prop key="editarTramiteR.htm">controlador</prop>
             </props>
         </property>
     </bean>
@@ -32,6 +48,6 @@
     <!--
     The index controller.
     -->
- <bean name ="controlador" class="Controlador.Ctrl" />
+    <bean name="controlador" class="Ctrl.Controlador"/>
 
 </beans>

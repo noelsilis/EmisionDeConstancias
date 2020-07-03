@@ -55,23 +55,17 @@
                                 <div class="form-group" id="user-group">
                                     <c:forEach var="dato" items="${lista}">
                                         <input class="form-control" type="text" placeholder="Usuario" name="X" value="${dato.NoControl}"/>    
-                                    </c:forEach>
                                 </div>
                                 <div class="form-group" id="contrasena-group">
-                                    <input class="form-control" type="password" placeholder="Contraseña actual" name="Y"/>                            
+                                    <input class="form-control" type="password" placeholder="Contraseña actual" name="Y" value="${dato.Contraseña}"/> 
+                                     </c:forEach>
                                 </div>
-                                <div class="form-group" id="rcontrasena-group">
-                                    <input class="form-control" type="password" placeholder="Nueva contraseña" name="Z"/>                            
-                                </div>
-                                <div class="form-group" id="rcontrasena-group">
-                                    <input class="form-control" type="password" placeholder="Repetir nueva contraseña" name="W"/>                            
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit?id=${dato.NoControl}" class="btn-guardar">Editar</button>
                                 </div>
                             </form>
                             <!--fin formulario-->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn-cerrar" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn-guardar">Editar</button>
                         </div>
                     </div>
                 </div>

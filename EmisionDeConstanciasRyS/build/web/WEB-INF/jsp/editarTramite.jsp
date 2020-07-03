@@ -13,40 +13,41 @@
         <script src="https://use.fontawesome.com/releases/v5.0.11/js/all.js"></script>
         <link rel="shortcut icon" href="imgVista/ico.png">
         <!-- Nuestro css-->
-        <link rel="stylesheet" type="text/css" href="cssVista/formularios.css">
+        <link rel="stylesheet" type="text/css" href="cssVista/index.css">
         <title>Crud</title>
     </head>
     <body>
         <div class="modal-dialog text-center">
             <div class="col-sm-10 main-section">
                 <div class="modal-content">
-                    <div class="col-12">
-                        <h4>Editar datos</h4>
+                    <div class="col-12" style="padding-top: 20px; padding-bottom: 20px; color: white">
+                        <h4>Agregar Tramites</h4>
                     </div>
                     <!--inicia formulario-->
                     <form class="col-12" method="POST">
                         <div class="form-group" id="user-group">
-                            <input class="form-control" type="text" placeholder="No. Control" name="Matricula" value="${tmp[0].NoControl}"/>                            
+                            <input class="form-control" type="text" placeholder="Tramite" name="tipoTramite" value="${tmp[0].tipoTramite}"/>                            
                         </div>
+                        <select class="form-group" id="sel1" name="estado">
+                            <option class="form-control">No iniciado</option>
+                            <option class="form-control">En proceso</option>
+                            <option class="form-control">Finalizado</option>
+                        </select>
                         <div class="form-group" id="user-name">
-                            <input class="form-control" type="text" placeholder="Nombres" name="Nombre"  value="${tmp[0].Nombres}"/>                            
+                            <input class="form-control" type="text" placeholder="Entrega AAAA-MM-DD" name="fechaEntrega" value="${tmp[0].fechaEntrega}"/>                            
                         </div>
                         <div class="form-group" id="user-pat">
-                            <input class="form-control" type="text" placeholder="Apellido Paterno" name="APaterno" value="${tmp[0].APaterno}"/>                            
+                            <input class="form-control" type="text" placeholder="URL vista"  name="vistaDoc" value="${tmp[0].vistaDoc}"/>                           
                         </div>
-                        <div class="form-group" id="user-mat">
-                            <input class="form-control" type="text" placeholder="Apellido materno" name="AMaterno" value="${tmp[0].AMaterno}"/>              
+                        <div class="form-group" id="user-pat">
+                            <input class="form-control" type="text" placeholder="URL descarga"  name="descargaDoc" value="${tmp[0].descargaDoc}"/>                           
                         </div>
                         <div class="form-group" id="user-especial">
-                            <input class="form-control" type="text" placeholder="Especialidad" name="Especialidad" value="${tmp[0].Especialidad}"/>                            
-                        </div>
-                        <div class="form-group" id="user-mail">
-                            <input class="form-control" type="text" placeholder="Email" name="Email" value="${tmp[0].Email}"/>                            
+                            <input class="form-control" type="text" placeholder="No. Control" name="NoControl" value="${tmp[0].NoControl}"/>                            
                         </div>
                         <div class="col-12 forgot">
                             <input type="submit" value="Actualizar" class="btn btn-success" >
-                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regrsar</a>  
-                            <a href="datosAlumno.htm" arget="contenedorIFrame" class="btn btn-primary">Regresar</a>
+                            <a href="especialidadesTramitesSS.htm" arget="contenedorIFrame" class="btn btn-danger">Cacelar</a>
                         </div>
                     </form>
                     <!--fin formulario-->

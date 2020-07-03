@@ -47,17 +47,17 @@ public class Controlador {
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);
         tmp = false;
-        boolean aux4=false;
+        boolean aux4 = false;
         if (datos.size() > 0) {
             tmp = true;
             sql = "select * from alumnos where Especialidad='X'";
             datos = this.jdbcTemplate.queryForList(sql);
             for (int i = 0; i < datos.size(); i++) {
-                String aux=""+datos.get(i);
-                int aux2=aux.indexOf(",");
-                String aux3=aux.substring(11, aux2);
+                String aux = "" + datos.get(i);
+                int aux2 = aux.indexOf(",");
+                String aux3 = aux.substring(11, aux2);
                 if (aux3.equals(mat)) {
-                    aux4=true;
+                    aux4 = true;
                 }
             }
             if (aux4) {
@@ -98,6 +98,12 @@ public class Controlador {
         mav.setViewName("menu_t_servicio");
         return mav;
     }
+    
+    @RequestMapping("agregarTramite.htm")
+    public ModelAndView agregarTramite() {
+        mav.setViewName("agregarTramite");
+        return mav;
+    }
 
     @RequestMapping("menu_t_residencia.htm")
     public ModelAndView menu_t_residencia() {
@@ -131,10 +137,45 @@ public class Controlador {
 
     @RequestMapping(value = "editarAlumno.htm", method = RequestMethod.POST)
     public ModelAndView Editar(Usuario u) {
+        String aux = "";
+        int aux2 = u.getEspecialidad().indexOf("ELECTROME");
+        if (aux2 >= 0) {
+            aux = "INGENIERÍA ELECTROMECÁNICA";
+        } else {
+            aux2 = u.getEspecialidad().indexOf("EMPRESARIAL");
+            if (aux2 >= 0) {
+                if (aux2 >= 0) {
+                    aux2 = u.getEspecialidad().indexOf("MIXTA");
+                    aux = "INGENIERÍA EN GESTIÓN EMPRESARIAL MIXTA";
+                } else {
+                    aux = "INGENIERÍA EN GESTIÓN EMPRESARIAL";
+                }
+            } else {
+                aux2 = u.getEspecialidad().indexOf("STICA");
+                if (aux2 >= 0) {
+                    aux = "INGENIERÍA EN LOGÍSTICA";
+                } else {
+                    aux2 = u.getEspecialidad().indexOf("COMPUTACIONALES");
+                    if (aux2 >= 0) {
+                        aux = "INGENIERÍA EN SISTEMAS COMPUTACIONALES";
+                    } else {
+                        aux2 = u.getEspecialidad().indexOf("DE LA INFORMACI");
+                        if (aux2 >= 0) {
+                            aux = "INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN Y";
+                        } else {
+                            aux2 = u.getEspecialidad().indexOf("INDUSTRIAL");
+                            if (aux2 >= 0) {
+                                aux = "INGENIERÍA INDUSTRIAL";
+                            }
+                        }
+                    }
+                }
+            }
+        }
         String sql = "update alumnos set NoControl=?, Nombres=?, APaterno=?, "
                 + "AMaterno=?, Especialidad=?, Email=? where NoControl=?";
         this.jdbcTemplate.update(sql, u.getMatricula(), u.getNombre(), u.getAPaterno(),
-                u.getAMaterno(), u.getEspecialidad(), u.getEmail(), no);
+                u.getAMaterno(), aux, u.getEmail(), no);
         tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
     }
@@ -240,11 +281,12 @@ public class Controlador {
         tmp3 = true;
         return mav;
     }
+    
 
     @RequestMapping("delete.htm")
     public ModelAndView Delete(HttpServletRequest request) {
         no = request.getParameter("id");
-        String sql = "delete from alumnos where NoControl=" + no;
+        String sql = "delete from alumnos where NoControl='" + no + "'";
         this.jdbcTemplate.update(sql);
         tmp2 = true;
         return new ModelAndView("redirect:/datosAlumno.htm");
@@ -278,10 +320,108 @@ public class Controlador {
 
     @RequestMapping(value = "configuracion.htm", method = RequestMethod.POST)
     public ModelAndView configuracion(Usuario u) {
-        String sql = "insert into alumnos(NoControl, Contraseña, Nombres, APaterno, AMaterno, Especialidad)values(?,?,?,?,?,?)";
-        System.out.println(sql);
-        this.jdbcTemplate.update(sql, u.getMatricula(), u.getPass(), u.getNombre(), u.getAPaterno(), u.getAMaterno(), "X");
+        String sql;
+        if (u.getX() != null && u.getY() != null) {
+            sql = "update alumnos set NoControl=?, Contraseña=? where NoControl=?";
+            this.jdbcTemplate.update(sql, u.getX(), u.getY(), mat);
+        }
+        if (u.getMatricula() != null && u.getPass() != null && u.getNombre() != null && u.getAPaterno() != null && u.getAMaterno() != null) {
+            sql = "insert into alumnos(NoControl, Contraseña, Nombres, APaterno, AMaterno, Especialidad)values(?,?,?,?,?,?)";
+            this.jdbcTemplate.update(sql, u.getMatricula(), u.getPass(), u.getNombre(), u.getAPaterno(), u.getAMaterno(), "X");
+        }
+        mat = u.getX();
         return new ModelAndView("redirect:/configuracion.htm");
+    }
+
+//    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.GET)
+//    public ModelAndView agregarTramite() {
+//        mav.addObject(new Usuario());
+//        mav.setViewName("agregarTramite");
+//        return mav;
+//    }
+//
+//    @RequestMapping(value = "agregarTramite.htm", method = RequestMethod.POST)
+//    public ModelAndView agregarTramite(Usuario u) {
+//        if (u.getTipoTramite() != null && u.getNoControl() != null) {
+//            if (u.getVistaDoc() == null) {
+//                u.setVistaDoc("");
+//            }
+//            if (u.getDescargaDoc() == null) {
+//                u.setDescargaDoc("");
+//            }
+//            if (u.getFechaEntrega() == null) {
+//                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?)";
+//                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
+//            } else {
+//                String sql = "insert into tramites(tipoTramite, estado, fechaTramite, fechaEntrega, vistaDoc, descargaDoc, NoControl)values(?,?,curdate(),?,?,?,?)";
+//                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getFechaEntrega(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl());
+//            }
+//        }
+//        return new ModelAndView("redirect:/especialidadesTramitesSS.htm");
+//    }
+
+    @RequestMapping(value = "editarTramiteS.htm", method = RequestMethod.GET)
+    public ModelAndView editarTramiteS(HttpServletRequest request) {
+        no = request.getParameter("id");
+        String sql = "select * from tramites where idtramites='" + no + "'";
+        System.out.println(sql);
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("tmp", datos);
+        mav.setViewName("editarTramite");
+        return mav;
+    }
+   
+    @RequestMapping(value = "editarTramiteS.htm", method = RequestMethod.POST)
+    public ModelAndView editarTramiteS(Usuario u) {
+        if (u.getTipoTramite() != null && u.getNoControl() != null) {
+            if (u.getVistaDoc() == null) {
+                u.setVistaDoc("");
+            }
+            if (u.getDescargaDoc() == null) {
+                u.setDescargaDoc("");
+            }
+            if (u.getFechaEntrega() == null) {
+                String sql = "update tramites set tipoTramite=?, estado=?, vistaDoc=?, descargaDoc=?, NoControl=? where idtramites=?";
+                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl(), no);
+            } else {
+                String sql = "update tramites set tipoTramite=?, estado=?, fechaEntrega=?, vistaDoc=?, descargaDoc=?, NoControl=? where idtramites=?";
+                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getFechaEntrega(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl(), no);
+            }
+        }
+        tmp2 = true;
+        return new ModelAndView("redirect:/especialidadesTramitesSS.htm");
+    }
+
+    @RequestMapping(value = "editarTramiteR.htm", method = RequestMethod.GET)
+    public ModelAndView editarTramiteR(HttpServletRequest request) {
+        no = request.getParameter("id");
+        String sql = "select * from tramites where idtramites='" + no + "'";
+        System.out.println(sql);
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("tmp", datos);
+        mav.setViewName("editarTramite");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarTramiteR.htm", method = RequestMethod.POST)
+    public ModelAndView editarTramiteR(Usuario u) {
+        if (u.getTipoTramite() != null && u.getNoControl() != null) {
+            if (u.getVistaDoc() == null) {
+                u.setVistaDoc("");
+            }
+            if (u.getDescargaDoc() == null) {
+                u.setDescargaDoc("");
+            }
+            if (u.getFechaEntrega() == null) {
+                String sql = "update tramites set tipoTramite=?, estado=?, vistaDoc=?, descargaDoc=?, NoControl=? where idtramites=?";
+                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl(), no);
+            } else {
+                String sql = "update tramites set tipoTramite=?, estado=?, fechaEntrega=?, vistaDoc=?, descargaDoc=?, NoControl=? where idtramites=?";
+                this.jdbcTemplate.update(sql, u.getTipoTramite(), u.getEstado(), u.getFechaEntrega(), u.getVistaDoc(), u.getDescargaDoc(), u.getNoControl(), no);
+            }
+        }
+        tmp2 = true;
+        return new ModelAndView("redirect:/especialidadesTramitesSS.htm");
     }
 }
 //"select * from alumnos where NoControl='" + u.getMatricula() + "' and Contraseña='" + u.getPass() + "'";
