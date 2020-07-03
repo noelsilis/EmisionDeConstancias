@@ -1,0 +1,100 @@
+body{
+    background: url(../imgVista/ITSOEH-fondo.png) no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:10%;
+    padding: 0;
+}
+
+.modal-content{
+    background: linear-gradient(#084866, #092432);
+    border-radius: 5%;
+    opacity: .95;
+    padding: 0 10%;
+    box-shadow: 0px 0px 20px #000000;
+}
+.modal-content .encabezado{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white
+}
+form-group input[type=submit], select{
+    background: #084866;
+    height: 45px;
+    font-size: 18px;
+    border:0;
+    border-radius: 25px;
+    /**/
+    width: 100%;
+    padding: 12px;
+    resize: vertical;
+}
+form-group input[type=submit], select:enabled{
+    background: #084866;
+    color:#ccc;
+}
+
+.form-group input[type=text], select{
+    background: #084866;
+    height: 45px;
+    font-size: 18px;
+    border:0;
+    border-radius: 25px;
+    /**/
+    width: 100%;
+    padding: 12px;
+    resize: vertical;
+}
+.form-group input[type=text], select:enabled{
+    background: #084866;
+    color:#ccc;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    color:grey;
+    position: absolute;
+    left: 28px;
+    font-size: 25px;
+    padding-top:5px;
+}
+
+.forgot{
+    padding: 10px 0;
+}
+
+.forgot a{
+    color: white;
+}
+
+
+.btn-iniciar{
+    width: 60%;
+    margin: 5px 0 25px;
+    height: 40px;
+    border-radius:100px; 
+    background: #e63c4f;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease all;
+}
+.btn-iniciar:hover{
+    background:white;
+    color: #e63c4f;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .form-group input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
